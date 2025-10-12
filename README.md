@@ -55,8 +55,8 @@ The following (multiagent) reinforcement algorithms are implemented,
   - [Deep Centralized Multiagent Actor Critic (DCMAC)](https://www.sciencedirect.com/science/article/abs/pii/S0951832018313309)
   - [Deep Decentralized Multiagent Actor Critic (DDMAC)](https://www.sciencedirect.com/science/article/abs/pii/S095183202100106X)
     - current implementation does not support constraints in the objective function
-  - Independent Actor Centralized Critic (IACC) 
-    - also referred to as DDMAC-CTDE in literature
+  - Independent Actor Centralized Critic (IACC)
+    - also referred to as [DDMAC-CTDE](https://arxiv.org/abs/2401.12455) in literature
   - Independent Actor Centralized Critic with Paramater Sharing (IACC-PS)
   - Independent Actor Critic (IAC)
   - Independent Actor Critic with Paramater Sharing (IAC-PS)
@@ -135,13 +135,17 @@ This project utilizes the clever abstractions in [EPyMARL](https://github.com/uo
 
 ## Related Work
 
-- [IMP-MARL](https://github.com/moratodpg/imp_marl): benchmarking scalability of cooperative MARL methods in real-world engineering applications.
-    - What's different: 
-        - Environments: (Correlated and uncorrelated) k-out-of-n systems and offshore wind structural systems.
-        - RL solvers: Provides wrappers for interfacing with several (MA)RL libraries such as [EPyMARL](https://github.com/uoe-agents/epymarl), [Rllib](imp_marl/imp_wrappers/examples/rllib/rllib_example.py), [MARLlib](imp_marl/imp_wrappers/marllib/marllib_wrap_ma_struct.py) etc.
+[IMP-MARL](https://github.com/moratodpg/imp_marl): a Suite of Environments for Large-scale Infrastructure Management Planning via MARL
+  - Benchmarking scalability of cooperative MARL methods in real-world infrastructure management planning problems.
+  - Environments: (Correlated and uncorrelated) k-out-of-n systems and offshore wind structural systems.
+  - RL solvers: Provides wrappers for interfacing with several (MA)RL libraries such as [EPyMARL](https://github.com/uoe-agents/epymarl), [Rllib](imp_marl/imp_wrappers/examples/rllib/rllib_example.py), [MARLlib](imp_marl/imp_wrappers/marllib/marllib_wrap_ma_struct.py) etc.
 
-- [IMP-act](https://github.com/AI-for-Infrastructure-Management/imp-act): Benchmarking MARL for Infrastructure Management Planning at Scale with JAX.
-    - What's different: 
-        - Environments: Large-scale road networks with up to 178 agents implemented in JAX for scalability.
-        - [IMP-act-JaxMARL](https://github.com/AI-for-Infrastructure-Management/imp-act-JaxMARL) interfaces IMP-act with multi-agent solvers in [JaxMARL](https://github.com/FLAIROx/JaxMARL).
-        -  We also provide NumPy-based environments for compatibility with PyTorch in [IMP-act-epymarl](https://github.com/AI-for-Infrastructure-Management/imp-act-epymarl).
+[IMP-act](https://github.com/AI-for-Infrastructure-Management/imp-act): Benchmarking MARL for Infrastructure Management Planning at Scale with JAX
+  - Large-scale road networks with up to 178 agents implemented in [JAX](https://jax.readthedocs.io/en/latest/) for scalability.
+  - [IMP-act-JaxMARL](https://github.com/AI-for-Infrastructure-Management/imp-act-JaxMARL) interfaces IMP-act with multi-agent solvers in [JaxMARL](https://github.com/FLAIROx/JaxMARL).
+  -  We also provide NumPy-based environments for compatibility with PyTorch in [IMP-act-epymarl](https://github.com/AI-for-Infrastructure-Management/imp-act-epymarl).
+
+[Multi-agent deep reinforcement learning with centralized training and decentralized execution for transportation infrastructure management](https://arxiv.org/abs/2401.12455)
+- Infrastructure management is modeled as a constrained multi-agent POMDP, capturing uncertainty, limited budgets, and interdependent maintenance decisions.
+- It employs deep decentralized multi-agent actor-critic (DDMAC) framework with centralized training and decentralized execution (CTDE) for scalable, coordinated decision-making.
+- Performance is demonstrated on a real transportation network with 96 components (11 bridges and 85 highway sections), showing significant improvements over traditional methods.
