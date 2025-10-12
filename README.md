@@ -52,14 +52,16 @@ wandb login
 The following (multiagent) reinforcement algorithms are implemented,
   - Double Deep Q-Network (DDQN)
   - Joint Actor Critic (JAC)
-  - Deep Centralized Multiagent Actor Critic (DCMAC)
-  - Deep Decentralized Multiagent Actor Critic (DDMAC)
-  - Independent Actor Centralized Critic (IACC)
+  - [Deep Centralized Multiagent Actor Critic (DCMAC)](https://www.sciencedirect.com/science/article/abs/pii/S0951832018313309)
+  - [Deep Decentralized Multiagent Actor Critic (DDMAC)](https://www.sciencedirect.com/science/article/abs/pii/S095183202100106X)
+    - current implementation does not support constraints in the objective function
+  - Independent Actor Centralized Critic (IACC) 
+    - also referred to as DDMAC-CTDE in literature
   - Independent Actor Centralized Critic with Paramater Sharing (IACC-PS)
   - Independent Actor Critic (IAC)
   - Independent Actor Critic with Paramater Sharing (IAC-PS)
 
-The base actor-critic algorithm: ACER from [SAMPLE EFFICIENT ACTOR-CRITIC WITH EXPERIENCE REPLAY](https://arxiv.org/pdf/1611.01224.pdf) by Wang et al, an off-policy algorithm that uses weighted sampling for experience replay.
+The base actor-critic algorithm: ACER from [SAMPLE EFFICIENT ACTOR-CRITIC WITH EXPERIENCE REPLAY](https://arxiv.org/pdf/1611.01224.pdf) by Wang et al., an off-policy algorithm that uses weighted sampling for experience replay.
 
 ### Classification of algorithms
 
@@ -97,14 +99,14 @@ The base actor-critic algorithm: ACER from [SAMPLE EFFICIENT ACTOR-CRITIC WITH E
   <tr>
     <td class="tg-9wq8" rowspan="2">CTDE</td>
     <td class="tg-9wq8" rowspan="4">Dec-POMDP</td>
-    <td class="tg-g7sd">IACC</td>
+    <td class="tg-g7sd">IACC (DDMAC-CTDE)</td>
     <td class="tg-9wq8" rowspan="2">Independent</td>
     <td class="tg-9wq8">Independent</td>
     <td class="tg-9wq8" rowspan="2">Centralized</td>
     <td class="tg-9wq8"><span style="font-weight:400;font-style:normal">Independent</span></td>
   </tr>
   <tr>
-    <td class="tg-g7sd">IACC-PS</td>
+    <td class="tg-g7sd">IACC-PS (DDMAC-CTDE-PS)</td>
     <td class="tg-9wq8">Independent</td>
     <td class="tg-9wq8">Shared</td>
   </tr>
@@ -128,13 +130,18 @@ The base actor-critic algorithm: ACER from [SAMPLE EFFICIENT ACTOR-CRITIC WITH E
 
 ## Acknowledgements
 
-This project utilizes the clever abstractions in [EPyMARL](https://github.com/uoe-agents/epymarl) and the author would like to acknowledge the insights shared in [Reinforcement Learning Implementation Tips and Tricks](https://agents.inf.ed.ac.uk/blog/reinforcement-learning-implementation-tricks/) for developing this library.
+This project utilizes the clever abstractions in [EPyMARL](https://github.com/uoe-agents/epymarl) and the author would like to acknowledge the insights shared in [Reinforcement Learning Implementation Tips and Tricks](https://agents-lab.org/blog/reinforcement-learning-implementation-tricks/) for developing this library.
 
 
 ## Related Work
 
-- [IMP-MARL](https://github.com/moratodpg/imp_marl): a platform for benchmarking the scalability of cooperative MARL methods in real-world engineering applications.
+- [IMP-MARL](https://github.com/moratodpg/imp_marl): benchmarking scalability of cooperative MARL methods in real-world engineering applications.
     - What's different: 
         - Environments: (Correlated and uncorrelated) k-out-of-n systems and offshore wind structural systems.
         - RL solvers: Provides wrappers for interfacing with several (MA)RL libraries such as [EPyMARL](https://github.com/uoe-agents/epymarl), [Rllib](imp_marl/imp_wrappers/examples/rllib/rllib_example.py), [MARLlib](imp_marl/imp_wrappers/marllib/marllib_wrap_ma_struct.py) etc.
 
+- [IMP-act](https://github.com/AI-for-Infrastructure-Management/imp-act): Benchmarking MARL for Infrastructure Management Planning at Scale with JAX.
+    - What's different: 
+        - Environments: Large-scale road networks with up to 178 agents implemented in JAX for scalability.
+        - [IMP-act-JaxMARL](https://github.com/AI-for-Infrastructure-Management/imp-act-JaxMARL) interfaces IMP-act with multi-agent solvers in [JaxMARL](https://github.com/FLAIROx/JaxMARL).
+        -  We also provide NumPy-based environments for compatibility with PyTorch in [IMP-act-epymarl](https://github.com/AI-for-Infrastructure-Management/imp-act-epymarl).
