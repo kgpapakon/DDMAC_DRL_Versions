@@ -49,11 +49,11 @@ wandb login
 
 ## RL Agents
 
-The following (multiagent) reinforcement algorithms are implemented,
+The following (multi-agent) reinforcement algorithms are implemented,
   - Double Deep Q-Network (DDQN)
   - Joint Actor Critic (JAC)
-  - [Deep Centralized Multiagent Actor Critic (DCMAC)](https://www.sciencedirect.com/science/article/abs/pii/S0951832018313309)
-  - [Deep Decentralized Multiagent Actor Critic (DDMAC)](https://www.sciencedirect.com/science/article/abs/pii/S095183202100106X)
+  - [Deep Centralized Multi-agent Actor Critic (DCMAC)](https://www.sciencedirect.com/science/article/abs/pii/S0951832018313309)
+  - [Deep Decentralized Multi-agent Actor Critic (DDMAC)](https://www.sciencedirect.com/science/article/abs/pii/S095183202100106X)
     - current implementation does not support constraints in the objective function
   - Independent Actor Centralized Critic (IACC)
     - also referred to as [DDMAC-CTDE](https://arxiv.org/abs/2401.12455) in literature
