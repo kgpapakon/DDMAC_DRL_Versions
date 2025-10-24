@@ -1,6 +1,6 @@
 # Inspection and Maintenance Planning using Reinforcement Learning (IMPRL) 
 
-A library for applying reinforcement learning to inspection and maintenance planning of deteriorating engineering systems. This library was primarily developed as a pedogogic excercise and for research use.
+A library for applying reinforcement learning to inspection and maintenance planning of deteriorating engineering systems, with emphasis on the DDMAC family of algorithms. This library was primarily developed as a pedogogic excercise and for research use.
 
 Developer: **Prateek Bhustali** (https://github.com/omniscientoctopus)
 
