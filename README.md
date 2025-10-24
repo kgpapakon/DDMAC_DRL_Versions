@@ -59,9 +59,9 @@ The following (multi-agent) reinforcement algorithms are implemented,
     - current implementation does not support constraints in the objective function
   - Independent Actor Centralized Critic (IACC)
     - also referred to as [DDMAC-CTDE](https://arxiv.org/abs/2401.12455) in literature
-  - Independent Actor Centralized Critic with Paramater Sharing (IACC-PS)
+  - Independent Actor Centralized Critic with Parameter Sharing (IACC-PS)
   - Independent Actor Critic (IAC)
-  - Independent Actor Critic with Paramater Sharing (IAC-PS)
+  - Independent Actor Critic with Parameter Sharing (IAC-PS)
 
 The base actor-critic algorithm: ACER from [SAMPLE EFFICIENT ACTOR-CRITIC WITH EXPERIENCE REPLAY](https://arxiv.org/pdf/1611.01224.pdf) by Wang et al., an off-policy algorithm that uses weighted sampling for experience replay.
 
