@@ -1,9 +1,14 @@
 # Inspection and Maintenance Planning using Reinforcement Learning (IMPRL) 
 
-A library for applying Deep Reinforcement Learning (DRL) to inspection and maintenance planning of deteriorating engineering systems, with emphasis on the **DDMAC (Deep Decentralized Multi-agent Actor Critic) family of algorithms**. This library was primarily developed as a pedogogic excercise and for research use.
+A library for applying Deep Reinforcement Learning (DRL) to inspection and maintenance planning of deteriorating engineering systems, with emphasis on the **DDMAC (Deep Decentralized Multi-agent Actor Critic) family of algorithms**. This library was primarily developed for educational purposes and research use.
 
-Developer: **Prateek Bhustali** (https://github.com/omniscientoctopus)
+Developer: **Prateek Bhustali** (https://github.com/prateekbhustali)
 
+An alternative, and more recent version, can be seen here: https://github.com/prateekbhustali/imprl  
+
+===========================================================================================
+<br> <br>
+  
 Example rollout of a DRL agent in a 5-out-of-5 system:
 
 ![](examples/rollout-hard-5-of-5-DDQN.png)
