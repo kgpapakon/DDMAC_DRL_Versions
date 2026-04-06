@@ -6,7 +6,7 @@ Developer: **Prateek Bhustali** (https://github.com/prateekbhustali)
 
 An alternative, and more recent version, can be seen here: https://github.com/prateekbhustali/imprl  
 
-===========================================================================================
+==========================================================================
 <br> <br>
   
 Example rollout of a DRL agent in a 5-out-of-5 system:
